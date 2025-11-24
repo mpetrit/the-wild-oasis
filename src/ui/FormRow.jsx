@@ -1,10 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-
-const Error = styled.span`
-  font-size: 1.4rem;
-  color: var(--color-red-700);
-`;
 
 const StyledFormRow = styled.div`
   display: grid;
@@ -33,10 +27,19 @@ const StyledFormRow = styled.div`
   }
 `;
 
+const Label = styled.label`
+  font-weight: 500;
+`;
+
+const Error = styled.span`
+  font-size: 1.4rem;
+  color: var(--color-red-700);
+`;
+
 function FormRow({ label, error, children }) {
   return (
     <StyledFormRow>
-      {label && <label htmlFor={children.props.id}>{label}</label>}
+      {label && <Label htmlFor={children.props.id}>{label}</Label>}
       {children}
       {error && <Error>{error}</Error>}
     </StyledFormRow>
